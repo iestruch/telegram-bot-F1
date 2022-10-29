@@ -1,0 +1,7 @@
+.vercel
+node_modules
+*.private.MD
+scripts
+firebase/config.js
+.env
+ngrok.yml

@@ -1,0 +1,27 @@
+{
+  "name": "vercel-tlgr-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "local": "vercel dev",
+    "build:dev": "vercel",
+    "build:prod": "vercel --prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.12.1",
+    "firebase-admin": "^11.1.0",
+    "node-telegram-bot-api": "^0.59.0"
+  },
+  "devDependencies": {
+    "ngrok": "^4.3.3",
+    "vercel": "^28.4.12"
+  },
+  "engines": {
+    "node": ">=16.15.0",
+    "yarn": ">=1.22.0"
+  }
+}
