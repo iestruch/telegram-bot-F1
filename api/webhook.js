@@ -4,7 +4,8 @@ process.env.NTBA_FIX_319 = "test";
 
 // Require our Telegram helper package
 const TelegramBot = require("node-telegram-bot-api");
-import { groupBot } from "../lib/GroupBot";
+import { groupBot } from "../lib/groupBot";
+import { sendMessage } from "../lib/helpers";
 import { standaloneBot } from "../lib/standaloneBot";
 
 // Export as an asynchronous function
@@ -18,7 +19,7 @@ module.exports = async (request, response) => {
 
     // Retrieve the POST request body that gets sent from Telegram
     const { body } = request;
-    // console.log('body message', body);
+    console.log('body message', body);
 
     const message = body.message || body.edited_message;
 
@@ -29,11 +30,11 @@ module.exports = async (request, response) => {
     if ((type === "group") | (type === "supergroup")) {
       await groupBot(bot, body);
     } else {
-      await bot.sendMessage(
-        id,
+      await sendMessage(
+        bot,
+        message,
         `Usame en un grupo!\nCrea un grupo y añademe @${process.env.BOT_NAME} y empecemos a jugar`
       );
-      // await standaloneBot(bot, body);
     }
   } catch (error) {
     // If there was an error sending our message then we
