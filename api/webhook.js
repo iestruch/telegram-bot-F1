@@ -19,7 +19,7 @@ module.exports = async (request, response) => {
 
     // Retrieve the POST request body that gets sent from Telegram
     const { body } = request;
-    // console.log('body message', body);
+    console.log('body message', body);
 
     const message = body.message || body.edited_message;
 
